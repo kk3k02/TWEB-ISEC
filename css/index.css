@@ -1,13 +1,13 @@
 /*
 |==========================================================================
-| CSS STYLESHEET
+| CORE STYLESHEET (Excluding Header and Footer)
 |==========================================================================
 |
 | 1. GLOBAL RESET & BASE STYLES
 | 2. CSS CUSTOM PROPERTIES (VARIABLES)
 | 3. TYPOGRAPHY & TEXT UTILITIES
 | 4. LAYOUT & STRUCTURE (Main, Grid, Sections)
-| 5. COMPONENTS (Hero, Cards, Buttons)
+| 5. COMPONENTS (Buttons, Cards, Hero)
 | 6. SPECIFIC SECTIONS (Past Editions, Gallery, Sponsors)
 | 7. UTILITIES (Spacing, Alignment)
 | 8. TOAST NOTIFICATIONS
@@ -23,14 +23,18 @@
 */
 
 * {
+  /* Box Model */
+  box-sizing: border-box; 
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* The best way to handle box model */
 }
 
 body {
+  /* Typography */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
+  
+  /* Colors */
   color: var(--text-color);
   background-color: var(--bg-color);
 }
@@ -76,26 +80,40 @@ p { margin: 0 0 1rem; }
 p:last-child { margin-bottom: 0; }
 
 h2 {
+  /* Typography */
   font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--secondary-color);
   letter-spacing: -0.02em;
+  font-weight: 700; /* Assuming bold text for h2 */
+  
+  /* Spacing */
+  margin-bottom: 1.5rem;
+  
+  /* Colors */
+  color: var(--secondary-color);
 }
 
 h3 {
+  /* Typography */
   font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
   letter-spacing: -0.01em;
+  font-weight: 600; /* Assuming semi-bold text for h3 */
+  
+  /* Spacing */
+  margin-bottom: 1rem;
+  
+  /* Colors */
+  color: var(--secondary-color);
 }
 
 h4 {
-  /* Base style for H4 */
+  /* Spacing */
   margin-bottom: 1rem;
+  
+  /* Colors */
   color: var(--text-primary);
 }
 
-/* List styles without inline styles */
+/* List styles */
 ul, ol { margin-left: 1.5rem; }
 ul { list-style: disc; }
 ol { list-style: decimal; }
@@ -113,11 +131,13 @@ ol { list-style: decimal; }
 */
 
 main {
+  /* Layout */
   max-width: 1200px;
   margin: 0 auto;
+  
+  /* Spacing */
   padding: 2rem;
-  /* Ensure footer is visible by calculating min-height (assuming footer height is 200px) */
-  min-height: calc(100vh - 200px); 
+  min-height: calc(100vh - 200px); /* Estimated min-height calculation */
 }
 
 /* Grid layout base */
@@ -132,7 +152,9 @@ main {
 }
 
 /* Section visibility for tab/view switching */
-.section { display: none; }
+.section { 
+  display: none; 
+}
 
 .section.active {
   display: block;
@@ -151,131 +173,182 @@ main {
 |--------------------------------------------------------------------------
 */
 
-/* ===== Buttons (used in header) ===== */
+/* ===== Buttons ===== */
 .btn {
+  /* Box Model */
   padding: 0.55rem 1.25rem;
   border: none;
   border-radius: 0.55rem;
+  
+  /* Typography */
   cursor: pointer;
   font-size: 0.95rem;
+  
+  /* Effects */
   transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-primary {
+  /* Colors */
   background-color: var(--primary-color);
   color: var(--secondary-color);
 }
 
 .btn-primary:hover {
+  /* Colors */
   background-color: var(--primary-dark);
   color: var(--white);
+  
+  /* Effects */
   transform: translateY(-1px);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
 }
 
 .btn:active {
+  /* Effects */
   transform: translateY(0);
   box-shadow: none;
 }
 
 /* ===== Cards ===== */
 .card {
-  background: #FFFDD0; /* Using a hardcoded value instead of var() - consider adding to :root */
+  /* Box Model */
   border-radius: 0.85rem;
   padding: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  
+  /* Colors */
+  background: #FFFDD0; 
+  
+  /* Effects */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .card:hover {
+  /* Effects */
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
 }
 
 .card-hor {
-  background: #FFFDD0; /* Using a hardcoded value instead of var() - consider adding to :root */
+  /* Colors */
+  background: #FFFDD0; 
+  
+  /* Box Model */
   border-radius: 0.85rem;
   padding: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  /* Note: Horizontal card does not have hover effect */
 }
 
-/* ===== Hero Section (improved) ===== */
+/* ===== Hero Section (Jumbotron) ===== */
 .hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-  color: var(--secondary-color);
+  /* Box Model */
   border-radius: 1rem;
   padding: clamp(1.5rem, 3vw, 3rem);
-  margin-bottom: 2.5rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(0, 0, 0, 0.08);
+  
+  /* Spacing */
+  margin-bottom: 2.5rem;
+  
+  /* Colors & Visuals */
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: var(--secondary-color);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 .hero h2 {
+  /* Typography */
   font-size: clamp(1.75rem, 3.2vw, 2.6rem);
   line-height: 1.15;
+  
+  /* Spacing */
   margin-bottom: 0.75rem;
+  
+  /* Colors */
   color: var(--secondary-color);
 }
 
 .hero-info {
+  /* Layout */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+  /* Spacing */
   gap: 1rem;
   margin-top: 1.25rem;
 }
 
 .info-item {
+  /* Layout */
   display: flex;
   align-items: center; /* Vertical centering of all content */
+  
+  /* Spacing */
   gap: 0.9rem;
   padding: 1rem;
+  
+  /* Box Model */
   border-radius: 0.85rem;
-  background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(0, 0, 0, 0.08);
+  
+  /* Visuals */
+  background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  
+  /* Effects */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .info-item:hover {
+  /* Effects */
   transform: translateY(-2px);
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
 }
 
 .info-item svg {
+  /* Box Model & Sizing */
   flex: 0 0 44px; /* Fixed width for the 'icon' column */
   width: 44px;
   height: 44px;
   padding: 10px;
   border-radius: 999px;
+  display: block;
+  
+  /* Colors */
   background: rgba(0, 0, 0, 0.08);
   color: var(--secondary-color);
-  display: block;
 }
 
 .info-item > div {
+  /* Layout */
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertical centering of text within its block */
 }
 
-.info-item > div > p { margin: 0; }
-.info-item > div > p + p { margin-top: 0.15rem; }
-
-/* "Label" (first <p>) styling without inline style - formerly opacity:0.9 and margin-bottom:0.25rem */
-.info-item > div > .info-label {
-  opacity: 0.85; /* Changed from 0.9 to align with the rest of the file */
-  font-weight: 650;
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
+.info-item > div > p { 
+  margin: 0; 
 }
 
-/* New class for the value text (for completeness) */
+.info-item > div > p + p { 
+  margin-top: 0.15rem; 
+}
+
+.info-item > div > .info-label {
+  /* Typography & Visuals */
+  font-weight: 650;
+  font-size: 0.95rem;
+  opacity: 0.85; 
+  
+  /* Spacing */
+  margin-bottom: 0.25rem;
+}
+
 .info-item > div > .info-value {
-    /* Base p style handles margin: 0; */
+  /* Base p style handles margin: 0; */
 }
 
 
@@ -285,77 +358,110 @@ main {
 |--------------------------------------------------------------------------
 */
 
-/* ===== Past Editions ===== */
+/* ===== Past Editions List ===== */
 .past-editions {
+  /* Layout */
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  width: 100%;
   align-items: stretch;
+  width: 100%;
+  
+  /* Spacing */
+  gap: 0.75rem;
 }
 
 .past-edition {
+  /* Layout */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  
+  /* Spacing */
   gap: 1rem;
   padding: 0.9rem 1rem;
+  
+  /* Box Model & Visuals */
   background: var(--bg-color);
   border-radius: 0.75rem;
-  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.past-edition__title { font-weight: 650; }
-.past-edition__meta { font-size: 0.95rem; }
+.past-edition__title { 
+  font-weight: 650; 
+}
 
-/* ===== Gallery ===== */
+.past-edition__meta { 
+  font-size: 0.95rem; 
+}
+
+/* ===== Gallery Grid ===== */
 .gallery {
+  /* Layout */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  
+  /* Spacing */
   gap: 1.25rem;
   margin-bottom: 3rem;
 }
 
 .gallery-item {
+  /* Box Model */
   border-radius: 0.85rem;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  
+  /* Effects */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .gallery-item:hover {
+  /* Effects */
   transform: translateY(-3px);
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
 }
 
 .gallery-item img {
+  /* Sizing & Model */
   width: 100%;
   height: 260px;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
-/* ===== Sponsors images ===== */
+/* ===== Sponsors images (Maximized Sizing) ===== */
 .img-center {
+  /* Layout */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.75rem;
+  
+  /* Spacing & Sizing */
+  padding: 1rem; 
+  min-height: 160px; /* Ensures vertical space for logos */
 }
 
 .img-center img {
-  max-width: 100%;
-  max-height: 140px;
-  object-fit: contain;
+  /* Sizing: Fill 100% of container size */
+  width: 100%; 
+  height: 100%; 
+  
+  /* Ensure logo is visible and maintains proportion (key for uniform cards) */
+  object-fit: contain; 
+  
+  /* Limiting max size to prevent overscaling on large screens */
+  max-width: 60%; 
+  max-height: 60%; 
+  
   display: block;
 }
 
-/* Styles for the "Supporting Organizations" H4 which had a different color inline */
+/* Custom color for specific H4 (from previous inline style) */
 .h4-supporting {
-    color: #ca8a04; /* The custom color used inline */
-    margin-bottom: 1rem; /* Inherited from base h4 but explicit here */
+    color: #ca8a04; 
+    margin-bottom: 1rem; 
 }
 
 
@@ -385,21 +491,34 @@ main {
 */
 
 .toast {
+  /* Positioning & Layering */
   position: fixed;
   top: 2rem;
   right: 2rem;
+  z-index: 2000;
+  
+  /* Box Model & Visuals */
   background: var(--white);
   padding: 1rem 1.25rem;
   border-radius: 0.75rem;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
   display: none;
-  z-index: 2000;
+  
+  /* Effects */
   animation: slideIn 0.25s ease-out;
 }
 
-.toast.show { display: block; }
-.toast.success { border-left: 4px solid var(--success-color); }
-.toast.error { border-left: 4px solid var(--danger-color); }
+.toast.show { 
+  display: block; 
+}
+
+.toast.success { 
+  border-left: 4px solid var(--success-color); 
+}
+
+.toast.error { 
+  border-left: 4px solid var(--danger-color); 
+}
 
 @keyframes slideIn {
   from { transform: translateX(240px); opacity: 0; }
@@ -427,26 +546,30 @@ main {
   .hero h2 { font-size: 1.8rem; }
 
   .info-item {
-    /* Changing grid behavior for smaller screens */
+    /* Layout */
     grid-template-columns: 40px 1fr;
-    padding: 0.9rem;
     display: flex;
     align-items: center;
+    
+    /* Spacing */
+    padding: 0.9rem;
   }
 
   .info-item svg {
+    /* Sizing */
     width: 40px;
     height: 40px;
   }
 
   .toast {
+    /* Positioning */
     left: 1rem;
     right: 1rem;
     top: 1rem;
   }
 
   .past-edition {
-    /* Stacking title and meta vertically on mobile */
+    /* Layout: Stacking title and meta vertically on mobile */
     flex-direction: column;
     align-items: flex-start;
   }

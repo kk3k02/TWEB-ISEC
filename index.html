@@ -1,856 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>International Congress on Saint John Paul II 2026</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="icon" href="img/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>International Congress on Saint John Paul II 2026</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="icon" href="img/favicon.ico" />
 </head>
 <body>
-    <!-- Audio in background -->
-    <audio id="bgm" preload="auto" loop>
-        <source src="audio/audio.mp3" type="audio/mpeg" />
-    </audio>
+  <audio id="bgm" preload="auto" loop>
+    <source src="audio/audio.mp3" type="audio/mpeg" />
+  </audio>
 
-    <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
+  <div id="toast" class="toast"></div>
 
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img class="logo-icon" src="img/zolta_morda.png" alt="">
-                <div class="logo-text">
-                    <h1><b>Saint John Paul II 2026</b></h1>
-                    <p>International Congress on the Life and Legacy of John Paul II</p>
-                </div>
-            </div>
-            
-            <nav id="mainNav">
-                <button onclick="showSection('conference')" class="nav-btn active">Conference</button>
-                <button onclick="showSection('program')" class="nav-btn">Program</button>
-                <button onclick="showSection('submission')" class="nav-btn">Paper Submission</button>
-                <button onclick="showSection('registration')" class="nav-btn">Registration</button>
-                <button onclick="showSection('membership')" class="nav-btn">Membership</button>
-            </nav>
-
-            <div class="auth-section">
-                <span id="userInfo" class="user-info" style="display: none;"></span>
-                <button id="authBtn" class="btn btn-primary" onclick="handleAuth()">Login</button>
-            </div>
-
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img class="logo-icon" src="img/zolta_morda.png" alt="" />
+        <div class="logo-text">
+          <h1><b>Saint John Paul II 2026</b></h1>
+          <p>International Congress on the Life and Legacy of John Paul II</p>
         </div>
-    </header>
+      </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Conference Section -->
-        <section id="conference" class="section active">
-            <div class="hero">
-                <h2>International Congress on Saint John Paul II 2026</h2>
-                <div class="hero-info">
-                    <div class="info-item">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L12 22M12 2L19 9M12 2L5 9M12 22L19 15M12 22L5 15"></path>
-                        </svg>
-                        <div>
-                            <p style="opacity: 0.9; margin-bottom: 0.25rem;">Location</p>
-                            <p>John Paul II Center</p>
-                            <p>Kraków, Poland</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <div>
-                            <p style="opacity: 0.9; margin-bottom: 0.25rem;">Dates</p>
-                            <p>October 16–19, 2026</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <nav id="mainNav">
+        <button class="nav-btn active" onclick="location.href='index.html'">Conference</button>
+        <button class="nav-btn" onclick="location.href='html/program.html'">Program</button>
+        <button class="nav-btn" onclick="location.href='htlm/submission.html'">Paper Submission</button>
+        <button class="nav-btn" onclick="location.href='html/registration.html'">Registration</button>
+        <button class="nav-btn" onclick="location.href='html/membership.html'">Membership</button>
+      </nav>
 
-            <div class="mb-4">
-                <h3>About the Conference</h3>
-                <p style="margin-bottom: 1rem;">
-                    The International Congress on Saint John Paul II is a multidisciplinary gathering dedicated to the life, 
-                    teaching, and enduring legacy of the Polish pope, Saint John Paul II (Jan Paweł II). The congress brings 
-                    together theologians, philosophers, historians, educators, clergy, and lay leaders from around the world 
-                    to reflect on his spiritual, cultural, and social influence.
-                </p>
-                <p>
-                    The main theme for the 2026 edition is <em>"Do Not Be Afraid: Faith, Freedom, and Human Dignity in the 
-                    Teaching of Saint John Paul II"</em>. We invite contributions on all aspects of his pontificate and life, 
-                    including but not limited to moral theology, social teaching, interreligious dialogue, youth and vocation 
-                    ministry, culture, and the role of John Paul II in contemporary European and global history.
-                </p>
-            </div>
+      <div class="auth-section">
+        <span id="userInfo" class="user-info" style="display:none;"></span>
+        <button id="authBtn" class="btn btn-primary" onclick="location.href='membership.html'">Login</button>
+      </div>
 
-            <div class="card mb-4">
-                <h3>Past Editions</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 0.75rem; background: var(--bg-color); border-radius: 0.375rem;">
-                        <span>JP2 Congress 2025 – Rome, Italy</span>
-                        <span class="text-muted">700+ participants, 180 presentations</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; padding: 0.75rem; background: var(--bg-color); border-radius: 0.375rem;">
-                        <span>JP2 Congress 2024 – Warsaw, Poland</span>
-                        <span class="text-muted">650+ participants, 160 presentations</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; padding: 0.75rem; background: var(--bg-color); border-radius: 0.375rem;">
-                        <span>JP2 Congress 2023 – Kraków, Poland</span>
-                        <span class="text-muted">600+ participants, 140 presentations</span>
-                    </div>
-                </div>
-            </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
 
-            <div class="mb-4">
-                
-            <h3>Gallery from Past Editions</h3>
-            <div class="gallery">
-                <div class="gallery-item">
-                <img src="https://media.jp2online.pl/uploads/image/20220713/115723_9b2502aa-f802-484a-8c56-176785174df7.jpg"
-                    alt="Archival photo related to Pope John Paul II (JP2online)">
-                </div>
-
-                <div class="gallery-item">
-                <img src="https://tertio.pl/wp-content/uploads/2024/04/Jan_Pawel_II_pielgrzymka_do_polski_1979.jpg"
-                    alt="Pope John Paul II during his pilgrimage to Poland in 1979">
-                </div>
-
-                <div class="gallery-item">
-                <img src="https://sdmpolska.pl//assets/www/46/manila-1995-x-sdm17064841996.jpg"
-                    alt="World Youth Day in Manila (1995) — archival event photo">
-                </div>
-
-                <div class="gallery-item">
-                <img src="https://stacja7.pl/wp-content/uploads/2020/05/Jan-Pawe%C5%82-II-_-CATHOPIC-scaled.jpg"
-                    alt="Portrait of Pope John Paul II (archival photo)">
-                </div>
-
-                <div class="gallery-item">
-                <img src="https://www.opiekun.kalisz.pl/media/images/publications/2016/07/wy-jestescie-nadzieja-kosciola-i-swiata-sdm-JP-II-fot-A-Polewska-news.jpg"
-                    alt="Pope John Paul II with young people — related to World Youth Day (archival photo)">
-                </div>
-
-                <div class="gallery-item">
-                <img src="https://d-art.ppstatic.pl/kadry/k/r/0a/d8/51aafeeb3f8ab_o_medium.jpg"
-                    alt="Archival press photo of Pope John Paul II">
-                </div>
-            </div>
-            </div>
-
-            <div class="mb-4">
-                <h3>Organizing Committee</h3>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <p class="text-primary mb-1"><strong>General Chair</strong></p>
-                        <p><strong>Prof. Maria Nowak</strong></p>
-                        <p class="text-muted">Pontifical University of John Paul II, Kraków</p>
-                    </div>
-                    <div class="card">
-                        <p class="text-primary mb-1"><strong>Scientific Committee Chair</strong></p>
-                        <p><strong>Fr. Thomas Reynolds</strong></p>
-                        <p class="text-muted">Catholic University of Lublin</p>
-                    </div>
-                    <div class="card">
-                        <p class="text-primary mb-1"><strong>Local Arrangements Chair</strong></p>
-                        <p><strong>Dr. Agnieszka Kowalska</strong></p>
-                        <p class="text-muted">Archdiocese of Kraków</p>
-                    </div>
-                    <div class="card">
-                        <p class="text-primary mb-1"><strong>Publications Chair</strong></p>
-                        <p><strong>Prof. John Miller</strong></p>
-                        <p class="text-muted">University of Notre Dame</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h3>Partners & Sponsors</h3>
-                <div class="mb-3">
-                    <h4 style="color: #d97706; margin-bottom: 1rem;">Main Institutional Partners</h4>
-                    <div class="grid grid-2">
-                        <div class="card text-center">
-                            <strong>Pontifical University of John Paul II</strong>
-                        </div>
-                        <div class="card text-center">
-                            <strong>Archdiocese of Kraków</strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <h4 style="color: #ca8a04; margin-bottom: 1rem;">Supporting Organizations</h4>
-                    <div class="grid grid-2">
-                        <div class="card text-center">
-                            <strong>John Paul II Foundation</strong>
-                        </div>
-                        <div class="card text-center">
-                            <strong>Institute for Theology and Culture</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Program Section -->
-        <section id="program" class="section">
-            <h2>Conference Program</h2>
-
-            <div class="mb-4">
-                <h3>Keynote Speakers</h3>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1528892952291-009c663ce843?w=400" alt="Keynote speaker" class="card-image">
-                        <h4>Prof. Karol Zieliński</h4>
-                        <p class="text-primary mb-1">Historian of the Pontificate</p>
-                        <p class="mb-2"><strong>From Wadowice to Rome: The Life Journey of John Paul II</strong></p>
-                        <p class="text-muted">October 16, 9:00 AM – 10:00 AM</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=400" alt="Keynote speaker" class="card-image">
-                        <h4>Sister Elena Rossi</h4>
-                        <p class="text-primary mb-1">Theologian and Educator</p>
-                        <p class="mb-2"><strong>"Be Not Afraid": Hope in the Teaching of John Paul II</strong></p>
-                        <p class="text-muted">October 17, 9:00 AM – 10:00 AM</p>
-                    </div>
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1494797710133-75adf6c1f4a3?w=400" alt="Keynote speaker" class="card-image">
-                        <h4>Dr. Michael O’Connor</h4>
-                        <p class="text-primary mb-1">Scholar of Catholic Social Thought</p>
-                        <p class="mb-2"><strong>Human Dignity and Freedom in the Social Teaching of John Paul II</strong></p>
-                        <p class="text-muted">October 18, 9:00 AM – 10:00 AM</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-4">
-                <h3>Conference Themes</h3>
-                <div class="grid grid-3">
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Biography and Historical Context</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Philosophy and Personalism</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Moral Theology & Ethics</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Catholic Social Teaching</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Ecumenism & Interreligious Dialogue</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Youth, Vocations & World Youth Days</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Culture, Art & Evangelization</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">John Paul II and Europe</div>
-                    <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Legacy in the Contemporary Church</div>
-                </div>
-            </div>
-
+  <main>
+    <section id="conference" class="section active">
+      <div class="hero">
+        <h2>International Congress on Saint John Paul II 2026</h2>
+        <div class="hero-info">
+          <div class="info-item">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L12 22M12 2L19 9M12 2L5 9M12 22L19 15M12 22L5 15"></path>
+            </svg>
             <div>
-                <h3>Program Schedule</h3>
-                
-                <div class="schedule-day">
-                    <h3>Day 1 – October 16, 2026</h3>
-                    <div class="event-item event-social">
-                        <strong style="min-width: 120px;">8:00 – 9:00</strong>
-                        <span>Registration & Welcome Coffee</span>
-                    </div>
-                    <div class="event-item event-keynote">
-                        <strong style="min-width: 120px;">9:00 – 10:00</strong>
-                        <span>Opening Ceremony & Keynote: Prof. Karol Zieliński</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">10:00 – 10:30</strong>
-                        <span>Coffee Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">10:30 – 12:30</strong>
-                        <span>Regular Session 1A: Early Life and Vocation of Karol Wojtyła</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">10:30 – 12:30</strong>
-                        <span>Regular Session 1B: Historical Context of the Pontificate</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">12:30 – 14:00</strong>
-                        <span>Lunch Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">14:00 – 16:00</strong>
-                        <span>Regular Session 2A: John Paul II and Central Europe</span>
-                    </div>
-                    <div class="event-item event-social">
-                        <strong style="min-width: 120px;">19:00 – 21:00</strong>
-                        <span>Welcome Reception & Cultural Evening</span>
-                    </div>
-                </div>
-
-                <div class="schedule-day">
-                    <h3>Day 2 – October 17, 2026</h3>
-                    <div class="event-item event-keynote">
-                        <strong style="min-width: 120px;">9:00 – 10:00</strong>
-                        <span>Keynote: Sister Elena Rossi</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">10:00 – 10:30</strong>
-                        <span>Coffee Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">10:30 – 12:30</strong>
-                        <span>Special Session: Theology of the Body and Human Love</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">12:30 – 14:00</strong>
-                        <span>Lunch Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">14:00 – 16:00</strong>
-                        <span>Regular Session 4A: John Paul II and Youth Ministry</span>
-                    </div>
-                    <div class="event-item event-social">
-                        <strong style="min-width: 120px;">19:00 – 22:00</strong>
-                        <span>Conference Banquet & Musical Tribute</span>
-                    </div>
-                </div>
-
-                <div class="schedule-day">
-                    <h3>Day 3 – October 18, 2026</h3>
-                    <div class="event-item event-keynote">
-                        <strong style="min-width: 120px;">9:00 – 10:00</strong>
-                        <span>Keynote: Dr. Michael O’Connor</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">10:00 – 10:30</strong>
-                        <span>Coffee Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">10:30 – 12:30</strong>
-                        <span>Special Session: Catholic Social Teaching in the Encyclicals</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">12:30 – 14:00</strong>
-                        <span>Lunch Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">14:00 – 16:00</strong>
-                        <span>Regular Session 6A: Interreligious Dialogue and Ecumenism</span>
-                    </div>
-                </div>
-
-                <div class="schedule-day">
-                    <h3>Day 4 – October 19, 2026</h3>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">9:00 – 11:00</strong>
-                        <span>Workshop: Teaching John Paul II in Schools and Parishes</span>
-                    </div>
-                    <div class="event-item event-break">
-                        <strong style="min-width: 120px;">11:00 – 11:30</strong>
-                        <span>Coffee Break</span>
-                    </div>
-                    <div class="event-item event-session">
-                        <strong style="min-width: 120px;">11:30 – 13:00</strong>
-                        <span>Tutorial: Working with John Paul II’s Writings and Homilies</span>
-                    </div>
-                    <div class="event-item event-keynote">
-                        <strong style="min-width: 120px;">13:00 – 14:00</strong>
-                        <span>Closing Ceremony & Awards</span>
-                    </div>
-                </div>
+              <p style="opacity:0.9;margin-bottom:0.25rem;">Location</p>
+              <p>John Paul II Center</p>
+              <p>Kraków, Poland</p>
             </div>
-        </section>
-
-        <!-- Paper Submission Section -->
-        <section id="submission" class="section">
-            <h2>Paper Submission</h2>
-
-            <div class="card mb-4" style="background: linear-gradient(135deg, #fef2f2, #fee2e2);">
-                <h3>Important Dates</h3>
-                <div style="display: flex; flex-direction: column; gap: 1rem;">
-                    <div style="display: flex; justify-content: space-between; padding: 1rem; background: white; border-radius: 0.375rem;">
-                        <span><strong>Paper Submission Deadline</strong></span>
-                        <span style="color: var(--danger-color);"><strong>May 15, 2026</strong></span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; padding: 1rem; background: white; border-radius: 0.375rem;">
-                        <span><strong>Notification of Acceptance</strong></span>
-                        <span style="color: var(--danger-color);"><strong>July 1, 2026</strong></span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; padding: 1rem; background: white; border-radius: 0.375rem;">
-                        <span><strong>Final Paper Submission</strong></span>
-                        <span style="color: var(--danger-color);"><strong>August 15, 2026</strong></span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; padding: 1rem; background: white; border-radius: 0.375rem;">
-                        <span><strong>Early Bird Registration</strong></span>
-                        <span style="color: var(--danger-color);"><strong>September 1, 2026</strong></span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; padding: 1rem; background: white; border-radius: 0.375rem;">
-                        <span><strong>Conference Dates</strong></span>
-                        <span style="color: var(--danger-color);"><strong>October 16–19, 2026</strong></span>
-                    </div>
-                </div>
+          </div>
+          <div class="info-item">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <div>
+              <p style="opacity:0.9;margin-bottom:0.25rem;">Dates</p>
+              <p>October 16–19, 2026</p>
             </div>
-
-            <div class="mb-4">
-                <h3>Submission Guidelines</h3>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h4>Paper Format</h4>
-                        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                            <li>Papers must be written in English</li>
-                            <li>Use standard academic style and references</li>
-                            <li>Regular papers: 6–8 pages</li>
-                            <li>Short papers: 4 pages</li>
-                            <li>Submit in PDF format</li>
-                            <li>Original, unpublished work only</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h4>Review Process</h4>
-                        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                            <li>Double-blind peer review</li>
-                            <li>Minimum 2–3 reviewers per paper</li>
-                            <li>Evaluated on originality, clarity, and relevance</li>
-                            <li>Selected papers published in conference proceedings</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-4">
-                <h3>Suggested Topics</h3>
-                <ol style="margin-left: 1.5rem; margin-top: 1rem; line-height: 2;">
-                    <li>Historical studies on the life of Karol Wojtyła and his pontificate</li>
-                    <li>Philosophical and theological aspects of John Paul II’s writings</li>
-                    <li>Pastoral approaches to youth, families, and vocations</li>
-                    <li>Catholic social teaching and human rights in his encyclicals</li>
-                    <li>John Paul II and interreligious or ecumenical dialogue</li>
-                </ol>
-            </div>
-
-            <div class="mb-4" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 2rem; border-radius: 0.5rem;">
-                <h3>Templates for Paper Submission</h3>
-                <div class="grid grid-3">
-                    <div class="card text-center" style="cursor: pointer;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">📄</div>
-                        <p><strong>LaTeX Template</strong></p>
-                        <p class="text-muted">Download .zip</p>
-                    </div>
-                    <div class="card text-center" style="cursor: pointer;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">📝</div>
-                        <p><strong>MS Word Template</strong></p>
-                        <p class="text-muted">Download .docx</p>
-                    </div>
-                    <div class="card text-center" style="cursor: pointer;">
-                        <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
-                        <p><strong>Sample Paper</strong></p>
-                        <p class="text-muted">Download .pdf</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Contact the Organization</h3>
-                <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                    <div class="grid grid-2">
-                        <div class="form-group">
-                            <label for="contactName">Full Name <span class="required">*</span></label>
-                            <input type="text" id="contactName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactGender">Gender <span class="required">*</span></label>
-                            <select id="contactGender" required>
-                                <option value="">Select Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                                <option value="prefer-not-to-say">Prefer not to say</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactId">ID / Passport Number <span class="required">*</span></label>
-                            <input type="text" id="contactId" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactPhone">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="contactPhone" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactAddress">Address <span class="required">*</span></label>
-                        <input type="text" id="contactAddress" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Email Address <span class="required">*</span></label>
-                        <input type="email" id="contactEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactReason">Reason for Contact <span class="required">*</span></label>
-                        <select id="contactReason" onchange="toggleOtherTopic()" required>
-                            <option value="">Select Reason</option>
-                            <option value="paper-submission">Paper Submission</option>
-                            <option value="registration">Registration</option>
-                            <option value="other">Other Questions</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="otherTopicGroup" style="display: none;">
-                        <label for="otherTopic">Please specify the topic <span class="required">*</span></label>
-                        <input type="text" id="otherTopic">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactMessage">Your Message <span class="required">*</span></label>
-                        <textarea id="contactMessage" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit Message</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Registration Section -->
-        <section id="registration" class="section">
-            <h2>Registration</h2>
-
-            <div class="mb-4">
-                <h3>Registration Fees</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th class="text-center">Early Bird<br>(by Sep 1)</th>
-                            <th class="text-center">Regular<br>(by Oct 1)</th>
-                            <th class="text-center">On-Site</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Clergy / Religious</td>
-                            <td class="text-center" style="color: var(--success-color);"><strong>€190</strong></td>
-                            <td class="text-center">€230</td>
-                            <td class="text-center">€260</td>
-                        </tr>
-                        <tr>
-                            <td>Lay Participant</td>
-                            <td class="text-center" style="color: var(--success-color);"><strong>€230</strong></td>
-                            <td class="text-center">€270</td>
-                            <td class="text-center">€300</td>
-                        </tr>
-                        <tr>
-                            <td>Student</td>
-                            <td class="text-center" style="color: var(--success-color);"><strong>€120</strong></td>
-                            <td class="text-center">€150</td>
-                            <td class="text-center">€170</td>
-                        </tr>
-                        <tr>
-                            <td>Online Participant</td>
-                            <td class="text-center" style="color: var(--success-color);"><strong>€70</strong></td>
-                            <td class="text-center">€90</td>
-                            <td class="text-center">€110</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="card mt-2">
-                    <h4>Registration Includes:</h4>
-                    <div class="grid grid-2">
-                        <ul style="margin-left: 1.5rem;">
-                            <li>Access to all plenary and parallel sessions</li>
-                            <li>Conference materials and program booklet</li>
-                            <li>Coffee breaks and lunches (on-site)</li>
-                        </ul>
-                        <ul style="margin-left: 1.5rem;">
-                            <li>Welcome reception</li>
-                            <li>Conference banquet (on-site)</li>
-                            <li>Certificate of participation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-4">
-                <h3>Registration Procedure</h3>
-                <ol style="margin-left: 1.5rem; margin-top: 1rem; line-height: 2;">
-                    <li>Create an account on the registration portal</li>
-                    <li>Complete the registration form with personal details</li>
-                    <li>Select your registration category</li>
-                    <li>Choose optional activities (pilgrimage visits, city tour)</li>
-                    <li>Complete payment (credit card or bank transfer)</li>
-                    <li>Receive confirmation email with further information</li>
-                </ol>
-            </div>
-
-            <div class="mb-4">
-                <h3>Venue & Location</h3>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h4>Conference Venue</h4>
-                        <p><strong>John Paul II Center "Do Not Be Afraid"</strong></p>
-                        <p class="text-muted mb-2">ul. Totus Tuus, 30-001 Kraków, Poland</p>
-                        <p class="mb-2">
-                            Modern conference facilities located in Kraków, the city closely connected with the life and 
-                            ministry of Saint John Paul II, with convenient access to major churches, historical sites, and 
-                            public transportation.
-                        </p>
-                        <h5>Facilities:</h5>
-                        <ul style="margin-left: 1.5rem;">
-                            <li>Multiple conference rooms and chapels</li>
-                            <li>High-speed Wi-Fi</li>
-                            <li>Audio-visual equipment</li>
-                            <li>Accessible facilities</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h4>Recommended Hotels</h4>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div>
-                                <p><strong>Hotel Cracovia Centrum</strong></p>
-                                <p class="text-muted">0.3 km from venue</p>
-                                <p class="text-primary">Special rate: €95/night</p>
-                            </div>
-                            <div>
-                                <p><strong>Old Town Heritage Hotel</strong></p>
-                                <p class="text-muted">1.2 km from venue</p>
-                                <p class="text-primary">Special rate: €89/night</p>
-                            </div>
-                            <div>
-                                <p><strong>Sanctuary Guest House</strong></p>
-                                <p class="text-muted">Next to Divine Mercy Sanctuary</p>
-                                <p class="text-primary">Special rate: €75/night</p>
-                            </div>
-                        </div>
-                        <p class="text-muted" style="font-size: 0.85rem; margin-top: 1rem;"><em>Use booking code "JP2CONGRESS2026" for special rates</em></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-4" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 2rem; border-radius: 0.5rem;">
-                <h3>Transportation</h3>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h4>From Airport</h4>
-                        <p class="mb-2"><strong>Kraków John Paul II International Airport (KRK)</strong></p>
-                        <ul style="font-size: 0.9rem;">
-                            <li>Train to city center: ~20 min</li>
-                            <li>Taxi: ~30 min</li>
-                            <li>Airport shuttle services</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h4>Public Transit</h4>
-                        <ul style="font-size: 0.9rem;">
-                            <li>Trams and buses throughout the city</li>
-                            <li>Easy access to Old Town and Wawel</li>
-                            <li>Single ride tickets and day passes available</li>
-                            <li>Contactless payment on many lines</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h4>Other Options</h4>
-                        <ul style="font-size: 0.9rem;">
-                            <li>Taxi and ride-sharing services</li>
-                            <li>Bike and electric scooter rentals</li>
-                            <li>Many sites within walking distance</li>
-                            <li>Limited parking at the venue</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h3>Explore Kraków</h3>
-                <div class="slideshow" id="tourismSlideshow">
-                    <div class="slide active">
-                        <img src="https://images.unsplash.com/photo-1543956692-bb589ef62037?w=1200" alt="Wawel Cathedral in Kraków">
-                        <div class="slide-content">
-                            <h3>Wawel Cathedral</h3>
-                            <p>Historic cathedral where young Karol Wojtyła prayed and celebrated Mass</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200" alt="Kraków Old Town">
-                        <div class="slide-content">
-                            <h3>Old Town & Main Market Square</h3>
-                            <p>UNESCO World Heritage site with churches, cafes, and cultural life</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1544989164-9770ae27f6f9?w=1200" alt="Divine Mercy Sanctuary in Łagiewniki">
-                        <div class="slide-content">
-                            <h3>Sanctuary of Divine Mercy</h3>
-                            <p>Important place of prayer promoted by John Paul II</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1508261306211-45a1c5c2a5c5?w=1200" alt="Mountains near Kraków">
-                        <div class="slide-content">
-                            <h3>Tatra Mountains Day Trip</h3>
-                            <p>Optional pilgrimage excursion to the mountains loved by John Paul II</p>
-                        </div>
-                    </div>
-                    <div class="slide-controls">
-                        <button class="slide-btn" onclick="changeSlide(-1)">‹</button>
-                        <button class="slide-btn" onclick="changeSlide(1)">›</button>
-                    </div>
-                    <div class="slide-indicators">
-                        <button class="indicator active" onclick="setSlide(0)"></button>
-                        <button class="indicator" onclick="setSlide(1)"></button>
-                        <button class="indicator" onclick="setSlide(2)"></button>
-                        <button class="indicator" onclick="setSlide(3)"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Contact Information</h3>
-                <div class="grid grid-2">
-                    <div>
-                        <p><strong>Email</strong></p>
-                        <p class="text-primary">registration@jp2congress.org</p>
-                        <p class="text-primary">info@jp2congress.org</p>
-                    </div>
-                    <div>
-                        <p><strong>Phone</strong></p>
-                        <p>+48 (12) 555 01 23</p>
-                        <p class="text-muted">Mon–Fri, 9:00 AM – 5:00 PM CET</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Membership Section -->
-        <section id="membership" class="section">
-            <div class="auth-container">
-                <div class="auth-tabs">
-                    <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
-                    <button class="auth-tab" onclick="switchAuthTab('register')">Register</button>
-                </div>
-
-                <div class="auth-form">
-                    <!-- Login Form -->
-                    <div id="loginForm" class="form-tab-content active">
-                        <h2 class="mb-3">Login to Your Account</h2>
-                        <form onsubmit="handleLogin(event)">
-                            <div class="form-group">
-                                <label for="loginEmail">Email Address</label>
-                                <input type="email" id="loginEmail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="loginPassword">Password</label>
-                                <input type="password" id="loginPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
-                            <p class="text-center mt-2 text-muted">
-                                Don't have an account? 
-                                <a href="#" onclick="switchAuthTab('register'); return false;" style="color: var(--primary-color);">Register here</a>
-                            </p>
-                        </form>
-
-                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-                            <p class="text-muted mb-2">Demo Credentials:</p>
-                            <div style="background: var(--bg-color); padding: 1rem; border-radius: 0.375rem;">
-                                <p><strong>Email:</strong> demo@example.com</p>
-                                <p><strong>Password:</strong> demo123</p>
-                                <p style="font-size: 0.85rem; margin-top: 0.5rem; color: var(--text-light);">
-                                    (Note: This is simulated authentication using localStorage for demonstration purposes.)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Register Form -->
-                    <div id="registerForm" class="form-tab-content">
-                        <h2 class="mb-3">Create New Account</h2>
-                        <form onsubmit="handleRegister(event)">
-                            <div class="form-group">
-                                <label for="registerName">Full Name</label>
-                                <input type="text" id="registerName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerEmail">Email Address</label>
-                                <input type="email" id="registerEmail" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerAffiliation">Affiliation / Institution / Parish</label>
-                                <input type="text" id="registerAffiliation" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerCountry">Country</label>
-                                <input type="text" id="registerCountry" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerPassword">Password</label>
-                                <input type="password" id="registerPassword" required minlength="6">
-                                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.25rem;">Minimum 6 characters</p>
-                            </div>
-                            <div class="form-group">
-                                <label for="registerConfirmPassword">Confirm Password</label>
-                                <input type="password" id="registerConfirmPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
-                            <p class="text-center mt-2 text-muted">
-                                Already have an account? 
-                                <a href="#" onclick="switchAuthTab('login'); return false;" style="color: var(--primary-color);">Login here</a>
-                            </p>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="card mt-2" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">
-                    <h3>Participant Account Benefits</h3>
-                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                        <li>Access to all conference materials and downloads</li>
-                        <li>Personalized conference schedule and reminders</li>
-                        <li>Networking opportunities with other participants</li>
-                        <li>Access to selected recordings after the congress</li>
-                        <li>Updates about future John Paul II events</li>
-                        <li>Digital certificate of participation</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>Saint John Paul II 2026</h4>
-                    <p style="font-size: 0.9rem;">International Congress on the Life and Legacy of John Paul II</p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">October 16–19, 2026</p>
-                    <p style="font-size: 0.9rem;">Kraków, Poland</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#" onclick="showSection('conference'); return false;" style="color: inherit; text-decoration: none;">Conference</a></li>
-                        <li><a href="#" onclick="showSection('program'); return false;" style="color: inherit; text-decoration: none;">Program</a></li>
-                        <li><a href="#" onclick="showSection('submission'); return false;" style="color: inherit; text-decoration: none;">Paper Submission</a></li>
-                        <li><a href="#" onclick="showSection('registration'); return false;" style="color: inherit; text-decoration: none;">Registration</a></li>
-                        <li><a href="#" onclick="showSection('membership'); return false;" style="color: inherit; text-decoration: none;">Membership</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Important Dates</h4>
-                    <ul>
-                        <li>Paper Submission: May 15, 2026</li>
-                        <li>Notification: July 1, 2026</li>
-                        <li>Final Papers: August 15, 2026</li>
-                        <li>Early Registration: September 1, 2026</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li>📧 info@jp2congress.org</li>
-                        <li>📞 +48 (12) 555 01 23</li>
-                        <li>📍 John Paul II Center, Kraków</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 International Congress on Saint John Paul II. All rights reserved.</p>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/audio.js"></script>
+      <div class="mb-4">
+        <h3>About the Conference</h3>
+        <p style="margin-bottom:1rem;">
+          The International Congress on Saint John Paul II is a multidisciplinary gathering dedicated to the life,
+          teaching, and enduring legacy of the Polish pope, Saint John Paul II (Jan Paweł II). The congress brings
+          together theologians, philosophers, historians, educators, clergy, and lay leaders from around the world
+          to reflect on his spiritual, cultural, and social influence.
+        </p>
+        <p>
+          The main theme for the 2026 edition is <em>"Do Not Be Afraid: Faith, Freedom, and Human Dignity in the
+          Teaching of Saint John Paul II"</em>. We invite contributions on all aspects of his pontificate and life,
+          including but not limited to moral theology, social teaching, interreligious dialogue, youth and vocation
+          ministry, culture, and the role of John Paul II in contemporary European and global history.
+        </p>
+      </div>
+
+      <div class="card mb-4">
+        <h3>Past Editions</h3>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;justify-content:space-between;padding:0.75rem;background:var(--bg-color);border-radius:0.375rem;">
+            <span>JP2 Congress 2025 – Rome, Italy</span>
+            <span class="text-muted">700+ participants, 180 presentations</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:0.75rem;background:var(--bg-color);border-radius:0.375rem;">
+            <span>JP2 Congress 2024 – Warsaw, Poland</span>
+            <span class="text-muted">650+ participants, 160 presentations</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:0.75rem;background:var(--bg-color);border-radius:0.375rem;">
+            <span>JP2 Congress 2023 – Kraków, Poland</span>
+            <span class="text-muted">600+ participants, 140 presentations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3>Gallery from Past Editions</h3>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="https://media.jp2online.pl/uploads/image/20220713/115723_9b2502aa-f802-484a-8c56-176785174df7.jpg" alt="Archival photo related to Pope John Paul II (JP2online)">
+          </div>
+          <div class="gallery-item">
+            <img src="https://tertio.pl/wp-content/uploads/2024/04/Jan_Pawel_II_pielgrzymka_do_polski_1979.jpg" alt="Pope John Paul II during his pilgrimage to Poland in 1979">
+          </div>
+          <div class="gallery-item">
+            <img src="https://sdmpolska.pl//assets/www/46/manila-1995-x-sdm17064841996.jpg" alt="World Youth Day in Manila (1995) — archival event photo">
+          </div>
+          <div class="gallery-item">
+            <img src="https://stacja7.pl/wp-content/uploads/2020/05/Jan-Pawe%C5%82-II-_-CATHOPIC-scaled.jpg" alt="Portrait of Pope John Paul II (archival photo)">
+          </div>
+          <div class="gallery-item">
+            <img src="https://www.opiekun.kalisz.pl/media/images/publications/2016/07/wy-jestescie-nadzieja-kosciola-i-swiata-sdm-JP-II-fot-A-Polewska-news.jpg" alt="Pope John Paul II with young people — related to World Youth Day (archival photo)">
+          </div>
+          <div class="gallery-item">
+            <img src="https://d-art.ppstatic.pl/kadry/k/r/0a/d8/51aafeeb3f8ab_o_medium.jpg" alt="Archival press photo of Pope John Paul II">
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3>Organizing Committee</h3>
+        <div class="grid grid-2">
+          <div class="card">
+            <p class="text-primary mb-1"><strong>General Chair</strong></p>
+            <p><strong>Prof. Maria Nowak</strong></p>
+            <p class="text-muted">Pontifical University of John Paul II, Kraków</p>
+          </div>
+          <div class="card">
+            <p class="text-primary mb-1"><strong>Scientific Committee Chair</strong></p>
+            <p><strong>Fr. Thomas Reynolds</strong></p>
+            <p class="text-muted">Catholic University of Lublin</p>
+          </div>
+          <div class="card">
+            <p class="text-primary mb-1"><strong>Local Arrangements Chair</strong></p>
+            <p><strong>Dr. Agnieszka Kowalska</strong></p>
+            <p class="text-muted">Archdiocese of Kraków</p>
+          </div>
+          <div class="card">
+            <p class="text-primary mb-1"><strong>Publications Chair</strong></p>
+            <p><strong>Prof. John Miller</strong></p>
+            <p class="text-muted">University of Notre Dame</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3>Partners & Sponsors</h3>
+        <div class="mb-3">
+          <h4 style="color:#d97706;margin-bottom:1rem;">Main Institutional Partners</h4>
+          <div class="grid grid-2">
+            <div class="card text-center"><strong>Pontifical University of John Paul II</strong></div>
+            <div class="card text-center"><strong>Archdiocese of Kraków</strong></div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <h4 style="color:#ca8a04;margin-bottom:1rem;">Supporting Organizations</h4>
+          <div class="grid grid-2">
+            <div class="card text-center"><strong>John Paul II Foundation</strong></div>
+            <div class="card text-center"><strong>Institute for Theology and Culture</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Saint John Paul II 2026</h4>
+          <p style="font-size:0.9rem;">International Congress on the Life and Legacy of John Paul II</p>
+          <p style="font-size:0.9rem;margin-top:0.5rem;">October 16–19, 2026</p>
+          <p style="font-size:0.9rem;">Kraków, Poland</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html" style="color:inherit;text-decoration:none;">Conference</a></li>
+            <li><a href="html/program.html" style="color:inherit;text-decoration:none;">Program</a></li>
+            <li><a href="html/submission.html" style="color:inherit;text-decoration:none;">Paper Submission</a></li>
+            <li><a href="html/registration.html" style="color:inherit;text-decoration:none;">Registration</a></li>
+            <li><a href="html/membership.html" style="color:inherit;text-decoration:none;">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Important Dates</h4>
+          <ul>
+            <li>Paper Submission: May 15, 2026</li>
+            <li>Notification: July 1, 2026</li>
+            <li>Final Papers: August 15, 2026</li>
+            <li>Early Registration: September 1, 2026</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>info@jp2congress.org</li>
+            <li>+48 (12) 555 01 23</li>
+            <li>John Paul II Center, Kraków</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 International Congress on Saint John Paul II. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/audio.js"></script>
 </body>
 </html>

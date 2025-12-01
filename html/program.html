@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program | Saint John Paul II 2026</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="icon" href="../img/favicon.ico" />
+</head>
+<body>
+  <audio id="bgm" preload="auto" loop>
+    <source src="../audio/audio.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="toast" class="toast"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img class="logo-icon" src="../img/zolta_morda.png" alt="" />
+        <div class="logo-text">
+          <h1><b>Saint John Paul II 2026</b></h1>
+          <p>International Congress on the Life and Legacy of John Paul II</p>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <button class="nav-btn" onclick="location.href='../index.html'">Conference</button>
+        <button class="nav-btn active" onclick="location.href='program.html'">Program</button>
+        <button class="nav-btn" onclick="location.href='submission.html'">Paper Submission</button>
+        <button class="nav-btn" onclick="location.href='registration.html'">Registration</button>
+        <button class="nav-btn" onclick="location.href='membership.html'">Membership</button>
+      </nav>
+
+      <div class="auth-section">
+        <span id="userInfo" class="user-info" style="display:none;"></span>
+        <button id="authBtn" class="btn btn-primary" onclick="location.href='membership.html'">Login</button>
+      </div>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="program" class="section active">
+      <h2>Conference Program</h2>
+
+      <div class="mb-4">
+        <h3>Keynote Speakers</h3>
+        <div class="grid grid-3">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1528892952291-009c663ce843?w=400" alt="Keynote speaker" class="card-image">
+            <h4>Prof. Karol Zieliński</h4>
+            <p class="text-primary mb-1">Historian of the Pontificate</p>
+            <p class="mb-2"><strong>From Wadowice to Rome: The Life Journey of John Paul II</strong></p>
+            <p class="text-muted">October 16, 9:00 AM – 10:00 AM</p>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=400" alt="Keynote speaker" class="card-image">
+            <h4>Sister Elena Rossi</h4>
+            <p class="text-primary mb-1">Theologian and Educator</p>
+            <p class="mb-2"><strong>"Be Not Afraid": Hope in the Teaching of John Paul II</strong></p>
+            <p class="text-muted">October 17, 9:00 AM – 10:00 AM</p>
+          </div>
+
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1494797710133-75adf6c1f4a3?w=400" alt="Keynote speaker" class="card-image">
+            <h4>Dr. Michael O’Connor</h4>
+            <p class="text-primary mb-1">Scholar of Catholic Social Thought</p>
+            <p class="mb-2"><strong>Human Dignity and Freedom in the Social Teaching of John Paul II</strong></p>
+            <p class="text-muted">October 18, 9:00 AM – 10:00 AM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <h3>Conference Themes</h3>
+        <div class="grid grid-3">
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Biography and Historical Context</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Philosophy and Personalism</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Moral Theology & Ethics</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Catholic Social Teaching</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Ecumenism & Interreligious Dialogue</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Youth, Vocations & World Youth Days</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Culture, Art & Evangelization</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">John Paul II and Europe</div>
+          <div class="p-2" style="background: var(--bg-color); border-radius: 0.375rem;">Legacy in the Contemporary Church</div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Program Schedule</h3>
+
+        <div class="schedule-day">
+          <h3>Day 1 – October 16, 2026</h3>
+          <div class="event-item event-social">
+            <strong style="min-width: 120px;">8:00 – 9:00</strong>
+            <span>Registration & Welcome Coffee</span>
+          </div>
+          <div class="event-item event-keynote">
+            <strong style="min-width: 120px;">9:00 – 10:00</strong>
+            <span>Opening Ceremony & Keynote: Prof. Karol Zieliński</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">10:00 – 10:30</strong>
+            <span>Coffee Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">10:30 – 12:30</strong>
+            <span>Regular Session 1A: Early Life and Vocation of Karol Wojtyła</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">10:30 – 12:30</strong>
+            <span>Regular Session 1B: Historical Context of the Pontificate</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">12:30 – 14:00</strong>
+            <span>Lunch Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">14:00 – 16:00</strong>
+            <span>Regular Session 2A: John Paul II and Central Europe</span>
+          </div>
+          <div class="event-item event-social">
+            <strong style="min-width: 120px;">19:00 – 21:00</strong>
+            <span>Welcome Reception & Cultural Evening</span>
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h3>Day 2 – October 17, 2026</h3>
+          <div class="event-item event-keynote">
+            <strong style="min-width: 120px;">9:00 – 10:00</strong>
+            <span>Keynote: Sister Elena Rossi</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">10:00 – 10:30</strong>
+            <span>Coffee Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">10:30 – 12:30</strong>
+            <span>Special Session: Theology of the Body and Human Love</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">12:30 – 14:00</strong>
+            <span>Lunch Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">14:00 – 16:00</strong>
+            <span>Regular Session 4A: John Paul II and Youth Ministry</span>
+          </div>
+          <div class="event-item event-social">
+            <strong style="min-width: 120px;">19:00 – 22:00</strong>
+            <span>Conference Banquet & Musical Tribute</span>
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h3>Day 3 – October 18, 2026</h3>
+          <div class="event-item event-keynote">
+            <strong style="min-width: 120px;">9:00 – 10:00</strong>
+            <span>Keynote: Dr. Michael O’Connor</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">10:00 – 10:30</strong>
+            <span>Coffee Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">10:30 – 12:30</strong>
+            <span>Special Session: Catholic Social Teaching in the Encyclicals</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">12:30 – 14:00</strong>
+            <span>Lunch Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">14:00 – 16:00</strong>
+            <span>Regular Session 6A: Interreligious Dialogue and Ecumenism</span>
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h3>Day 4 – October 19, 2026</h3>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">9:00 – 11:00</strong>
+            <span>Workshop: Teaching John Paul II in Schools and Parishes</span>
+          </div>
+          <div class="event-item event-break">
+            <strong style="min-width: 120px;">11:00 – 11:30</strong>
+            <span>Coffee Break</span>
+          </div>
+          <div class="event-item event-session">
+            <strong style="min-width: 120px;">11:30 – 13:00</strong>
+            <span>Tutorial: Working with John Paul II’s Writings and Homilies</span>
+          </div>
+          <div class="event-item event-keynote">
+            <strong style="min-width: 120px;">13:00 – 14:00</strong>
+            <span>Closing Ceremony & Awards</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Saint John Paul II 2026</h4>
+          <p style="font-size:0.9rem;">International Congress on the Life and Legacy of John Paul II</p>
+          <p style="font-size:0.9rem;margin-top:0.5rem;">October 16–19, 2026</p>
+          <p style="font-size:0.9rem;">Kraków, Poland</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html" style="color:inherit;text-decoration:none;">Conference</a></li>
+            <li><a href="program.html" style="color:inherit;text-decoration:none;">Program</a></li>
+            <li><a href="submission.html" style="color:inherit;text-decoration:none;">Paper Submission</a></li>
+            <li><a href="registration.html" style="color:inherit;text-decoration:none;">Registration</a></li>
+            <li><a href="membership.html" style="color:inherit;text-decoration:none;">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Important Dates</h4>
+          <ul>
+            <li>Paper Submission: May 15, 2026</li>
+            <li>Notification: July 1, 2026</li>
+            <li>Final Papers: August 15, 2026</li>
+            <li>Early Registration: September 1, 2026</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>info@jp2congress.org</li>
+            <li>+48 (12) 555 01 23</li>
+            <li>John Paul II Center, Kraków</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 International Congress on Saint John Paul II. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/audio.js"></script>
+</body>
+</html>

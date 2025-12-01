@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration | Saint John Paul II 2026</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="icon" href="../img/favicon.ico" />
+</head>
+<body>
+  <audio id="bgm" preload="auto" loop>
+    <source src="../audio/audio.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="toast" class="toast"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img class="logo-icon" src="../img/zolta_morda.png" alt="" />
+        <div class="logo-text">
+          <h1><b>Saint John Paul II 2026</b></h1>
+          <p>International Congress on the Life and Legacy of John Paul II</p>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <button class="nav-btn" onclick="location.href='../index.html'">Conference</button>
+        <button class="nav-btn" onclick="location.href='program.html'">Program</button>
+        <button class="nav-btn" onclick="location.href='submission.html'">Paper Submission</button>
+        <button class="nav-btn active" onclick="location.href='registration.html'">Registration</button>
+        <button class="nav-btn" onclick="location.href='membership.html'">Membership</button>
+      </nav>
+
+      <div class="auth-section">
+        <span id="userInfo" class="user-info" style="display:none;"></span>
+        <button id="authBtn" class="btn btn-primary" onclick="location.href='membership.html'">Login</button>
+      </div>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="registration" class="section active">
+      <h2>Registration</h2>
+
+      <div class="mb-4">
+        <h3>Registration Fees</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th class="text-center">Early Bird<br>(by Sep 1)</th>
+              <th class="text-center">Regular<br>(by Oct 1)</th>
+              <th class="text-center">On-Site</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clergy / Religious</td>
+              <td class="text-center" style="color: var(--success-color);"><strong>€190</strong></td>
+              <td class="text-center">€230</td>
+              <td class="text-center">€260</td>
+            </tr>
+            <tr>
+              <td>Lay Participant</td>
+              <td class="text-center" style="color: var(--success-color);"><strong>€230</strong></td>
+              <td class="text-center">€270</td>
+              <td class="text-center">€300</td>
+            </tr>
+            <tr>
+              <td>Student</td>
+              <td class="text-center" style="color: var(--success-color);"><strong>€120</strong></td>
+              <td class="text-center">€150</td>
+              <td class="text-center">€170</td>
+            </tr>
+            <tr>
+              <td>Online Participant</td>
+              <td class="text-center" style="color: var(--success-color);"><strong>€70</strong></td>
+              <td class="text-center">€90</td>
+              <td class="text-center">€110</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="card mt-2">
+          <h4>Registration Includes:</h4>
+          <div class="grid grid-2">
+            <ul style="margin-left: 1.5rem;">
+              <li>Access to all plenary and parallel sessions</li>
+              <li>Conference materials and program booklet</li>
+              <li>Coffee breaks and lunches (on-site)</li>
+            </ul>
+            <ul style="margin-left: 1.5rem;">
+              <li>Welcome reception</li>
+              <li>Conference banquet (on-site)</li>
+              <li>Certificate of participation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <h3>Registration Procedure</h3>
+        <ol style="margin-left: 1.5rem; margin-top: 1rem; line-height: 2;">
+          <li>Create an account on the registration portal</li>
+          <li>Complete the registration form with personal details</li>
+          <li>Select your registration category</li>
+          <li>Choose optional activities (pilgrimage visits, city tour)</li>
+          <li>Complete payment (credit card or bank transfer)</li>
+          <li>Receive confirmation email with further information</li>
+        </ol>
+      </div>
+
+      <div class="mb-4">
+        <h3>Venue & Location</h3>
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>Conference Venue</h4>
+            <p><strong>John Paul II Center "Do Not Be Afraid"</strong></p>
+            <p class="text-muted mb-2">ul. Totus Tuus, 30-001 Kraków, Poland</p>
+            <p class="mb-2">
+              Modern conference facilities located in Kraków, the city closely connected with the life and
+              ministry of Saint John Paul II, with convenient access to major churches, historical sites, and
+              public transportation.
+            </p>
+            <h5>Facilities:</h5>
+            <ul style="margin-left: 1.5rem;">
+              <li>Multiple conference rooms and chapels</li>
+              <li>High-speed Wi-Fi</li>
+              <li>Audio-visual equipment</li>
+              <li>Accessible facilities</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Recommended Hotels</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <p><strong>Hotel Cracovia Centrum</strong></p>
+                <p class="text-muted">0.3 km from venue</p>
+                <p class="text-primary">Special rate: €95/night</p>
+              </div>
+              <div>
+                <p><strong>Old Town Heritage Hotel</strong></p>
+                <p class="text-muted">1.2 km from venue</p>
+                <p class="text-primary">Special rate: €89/night</p>
+              </div>
+              <div>
+                <p><strong>Sanctuary Guest House</strong></p>
+                <p class="text-muted">Next to Divine Mercy Sanctuary</p>
+                <p class="text-primary">Special rate: €75/night</p>
+              </div>
+            </div>
+            <p class="text-muted" style="font-size: 0.85rem; margin-top: 1rem;">
+              <em>Use booking code "JP2CONGRESS2026" for special rates</em>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 2rem; border-radius: 0.5rem;">
+        <h3>Transportation</h3>
+        <div class="grid grid-3">
+          <div class="card">
+            <h4>From Airport</h4>
+            <p class="mb-2"><strong>Kraków John Paul II International Airport (KRK)</strong></p>
+            <ul style="font-size: 0.9rem;">
+              <li>Train to city center: ~20 min</li>
+              <li>Taxi: ~30 min</li>
+              <li>Airport shuttle services</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Public Transit</h4>
+            <ul style="font-size: 0.9rem;">
+              <li>Trams and buses throughout the city</li>
+              <li>Easy access to Old Town and Wawel</li>
+              <li>Single ride tickets and day passes available</li>
+              <li>Contactless payment on many lines</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Other Options</h4>
+            <ul style="font-size: 0.9rem;">
+              <li>Taxi and ride-sharing services</li>
+              <li>Bike and electric scooter rentals</li>
+              <li>Many sites within walking distance</li>
+              <li>Limited parking at the venue</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3>Explore Kraków</h3>
+        <div class="slideshow" id="tourismSlideshow">
+          <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1543956692-bb589ef62037?w=1200" alt="Wawel Cathedral in Kraków">
+            <div class="slide-content">
+              <h3>Wawel Cathedral</h3>
+              <p>Historic cathedral where young Karol Wojtyła prayed and celebrated Mass</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200" alt="Kraków Old Town">
+            <div class="slide-content">
+              <h3>Old Town & Main Market Square</h3>
+              <p>UNESCO World Heritage site with churches, cafes, and cultural life</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1544989164-9770ae27f6f9?w=1200" alt="Divine Mercy Sanctuary in Łagiewniki">
+            <div class="slide-content">
+              <h3>Sanctuary of Divine Mercy</h3>
+              <p>Important place of prayer promoted by John Paul II</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1508261306211-45a1c5c2a5c5?w=1200" alt="Mountains near Kraków">
+            <div class="slide-content">
+              <h3>Tatra Mountains Day Trip</h3>
+              <p>Optional pilgrimage excursion to the mountains loved by John Paul II</p>
+            </div>
+          </div>
+          <div class="slide-controls">
+            <button class="slide-btn" onclick="changeSlide(-1)">‹</button>
+            <button class="slide-btn" onclick="changeSlide(1)">›</button>
+          </div>
+          <div class="slide-indicators">
+            <button class="indicator active" onclick="setSlide(0)"></button>
+            <button class="indicator" onclick="setSlide(1)"></button>
+            <button class="indicator" onclick="setSlide(2)"></button>
+            <button class="indicator" onclick="setSlide(3)"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Contact Information</h3>
+        <div class="grid grid-2">
+          <div>
+            <p><strong>Email</strong></p>
+            <p class="text-primary">registration@jp2congress.org</p>
+            <p class="text-primary">info@jp2congress.org</p>
+          </div>
+          <div>
+            <p><strong>Phone</strong></p>
+            <p>+48 (12) 555 01 23</p>
+            <p class="text-muted">Mon–Fri, 9:00 AM – 5:00 PM CET</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Saint John Paul II 2026</h4>
+          <p style="font-size:0.9rem;">International Congress on the Life and Legacy of John Paul II</p>
+          <p style="font-size:0.9rem;margin-top:0.5rem;">October 16–19, 2026</p>
+          <p style="font-size:0.9rem;">Kraków, Poland</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html" style="color:inherit;text-decoration:none;">Conference</a></li>
+            <li><a href="program.html" style="color:inherit;text-decoration:none;">Program</a></li>
+            <li><a href="submission.html" style="color:inherit;text-decoration:none;">Paper Submission</a></li>
+            <li><a href="registration.html" style="color:inherit;text-decoration:none;">Registration</a></li>
+            <li><a href="membership.html" style="color:inherit;text-decoration:none;">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Important Dates</h4>
+          <ul>
+            <li>Paper Submission: May 15, 2026</li>
+            <li>Notification: July 1, 2026</li>
+            <li>Final Papers: August 15, 2026</li>
+            <li>Early Registration: September 1, 2026</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>info@jp2congress.org</li>
+            <li>+48 (12) 555 01 23</li>
+            <li>John Paul II Center, Kraków</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 International Congress on Saint John Paul II. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/audio.js"></script>
+</body>
+</html>

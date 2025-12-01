@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Submission | Saint John Paul II 2026</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="icon" href="../img/favicon.ico" />
+</head>
+<body>
+  <audio id="bgm" preload="auto" loop>
+    <source src="../audio/audio.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="toast" class="toast"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img class="logo-icon" src="../img/zolta_morda.png" alt="" />
+        <div class="logo-text">
+          <h1><b>Saint John Paul II 2026</b></h1>
+          <p>International Congress on the Life and Legacy of John Paul II</p>
+        </div>
+      </div>
+
+      <nav id="mainNav">
+        <button class="nav-btn" onclick="location.href='../index.html'">Conference</button>
+        <button class="nav-btn" onclick="location.href='program.html'">Program</button>
+        <button class="nav-btn active" onclick="location.href='submission.html'">Paper Submission</button>
+        <button class="nav-btn" onclick="location.href='registration.html'">Registration</button>
+        <button class="nav-btn" onclick="location.href='membership.html'">Membership</button>
+      </nav>
+
+      <div class="auth-section">
+        <span id="userInfo" class="user-info" style="display:none;"></span>
+        <button id="authBtn" class="btn btn-primary" onclick="location.href='membership.html'">Login</button>
+      </div>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="submission" class="section active">
+      <h2>Paper Submission</h2>
+
+      <div class="card mb-4" style="background: linear-gradient(135deg, #fef2f2, #fee2e2);">
+        <h3>Important Dates</h3>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;justify-content:space-between;padding:1rem;background:white;border-radius:0.375rem;">
+            <span><strong>Paper Submission Deadline</strong></span>
+            <span style="color: var(--danger-color);"><strong>May 15, 2026</strong></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem;background:white;border-radius:0.375rem;">
+            <span><strong>Notification of Acceptance</strong></span>
+            <span style="color: var(--danger-color);"><strong>July 1, 2026</strong></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem;background:white;border-radius:0.375rem;">
+            <span><strong>Final Paper Submission</strong></span>
+            <span style="color: var(--danger-color);"><strong>August 15, 2026</strong></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem;background:white;border-radius:0.375rem;">
+            <span><strong>Early Bird Registration</strong></span>
+            <span style="color: var(--danger-color);"><strong>September 1, 2026</strong></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem;background:white;border-radius:0.375rem;">
+            <span><strong>Conference Dates</strong></span>
+            <span style="color: var(--danger-color);"><strong>October 16–19, 2026</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h3>Submission Guidelines</h3>
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>Paper Format</h4>
+            <ul style="margin-left:1.5rem;margin-top:1rem;">
+              <li>Papers must be written in English</li>
+              <li>Use standard academic style and references</li>
+              <li>Regular papers: 6–8 pages</li>
+              <li>Short papers: 4 pages</li>
+              <li>Submit in PDF format</li>
+              <li>Original, unpublished work only</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Review Process</h4>
+            <ul style="margin-left:1.5rem;margin-top:1rem;">
+              <li>Double-blind peer review</li>
+              <li>Minimum 2–3 reviewers per paper</li>
+              <li>Evaluated on originality, clarity, and relevance</li>
+              <li>Selected papers published in conference proceedings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <h3>Suggested Topics</h3>
+        <ol style="margin-left:1.5rem;margin-top:1rem;line-height:2;">
+          <li>Historical studies on the life of Karol Wojtyła and his pontificate</li>
+          <li>Philosophical and theological aspects of John Paul II’s writings</li>
+          <li>Pastoral approaches to youth, families, and vocations</li>
+          <li>Catholic social teaching and human rights in his encyclicals</li>
+          <li>John Paul II and interreligious or ecumenical dialogue</li>
+        </ol>
+      </div>
+
+      <div class="mb-4" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); padding: 2rem; border-radius: 0.5rem;">
+        <h3>Templates for Paper Submission</h3>
+        <div class="grid grid-3">
+          <div class="card text-center" style="cursor:pointer;">
+            <div style="font-size:2rem;margin-bottom:1rem;">📄</div>
+            <p><strong>LaTeX Template</strong></p>
+            <p class="text-muted">Download .zip</p>
+          </div>
+          <div class="card text-center" style="cursor:pointer;">
+            <div style="font-size:2rem;margin-bottom:1rem;">📝</div>
+            <p><strong>MS Word Template</strong></p>
+            <p class="text-muted">Download .docx</p>
+          </div>
+          <div class="card text-center" style="cursor:pointer;">
+            <div style="font-size:2rem;margin-bottom:1rem;">📋</div>
+            <p><strong>Sample Paper</strong></p>
+            <p class="text-muted">Download .pdf</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Contact the Organization</h3>
+        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label for="contactName">Full Name <span class="required">*</span></label>
+              <input type="text" id="contactName" required>
+            </div>
+            <div class="form-group">
+              <label for="contactGender">Gender <span class="required">*</span></label>
+              <select id="contactGender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="prefer-not-to-say">Prefer not to say</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactId">ID / Passport Number <span class="required">*</span></label>
+              <input type="text" id="contactId" required>
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="contactPhone" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactAddress">Address <span class="required">*</span></label>
+            <input type="text" id="contactAddress" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail">Email Address <span class="required">*</span></label>
+            <input type="email" id="contactEmail" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contactReason">Reason for Contact <span class="required">*</span></label>
+            <select id="contactReason" onchange="toggleOtherTopic()" required>
+              <option value="">Select Reason</option>
+              <option value="paper-submission">Paper Submission</option>
+              <option value="registration">Registration</option>
+              <option value="other">Other Questions</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="otherTopicGroup" style="display:none;">
+            <label for="otherTopic">Please specify the topic <span class="required">*</span></label>
+            <input type="text" id="otherTopic">
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Your Message <span class="required">*</span></label>
+            <textarea id="contactMessage" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Saint John Paul II 2026</h4>
+          <p style="font-size:0.9rem;">International Congress on the Life and Legacy of John Paul II</p>
+          <p style="font-size:0.9rem;margin-top:0.5rem;">October 16–19, 2026</p>
+          <p style="font-size:0.9rem;">Kraków, Poland</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html" style="color:inherit;text-decoration:none;">Conference</a></li>
+            <li><a href="program.html" style="color:inherit;text-decoration:none;">Program</a></li>
+            <li><a href="submission.html" style="color:inherit;text-decoration:none;">Paper Submission</a></li>
+            <li><a href="registration.html" style="color:inherit;text-decoration:none;">Registration</a></li>
+            <li><a href="membership.html" style="color:inherit;text-decoration:none;">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Important Dates</h4>
+          <ul>
+            <li>Paper Submission: May 15, 2026</li>
+            <li>Notification: July 1, 2026</li>
+            <li>Final Papers: August 15, 2026</li>
+            <li>Early Registration: September 1, 2026</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>info@jp2congress.org</li>
+            <li>+48 (12) 555 01 23</li>
+            <li>John Paul II Center, Kraków</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 International Congress on Saint John Paul II. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/audio.js"></script>
+</body>
+</html>

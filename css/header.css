@@ -1,13 +1,13 @@
 /*
 |==========================================================================
-| HEADER STYLES
+| HEADER STYLES (ENHANCED DESIGN)
 |==========================================================================
 | Defines the navigation bar, logo, and responsive behavior for the header.
 */
 
 header {
   /* Positioning & Layering */
-  position: sticky; /* Makes the header stay at the top */
+  position: sticky; 
   top: 0;
   z-index: 1000;
   
@@ -16,41 +16,44 @@ header {
   color: var(--secondary-color);
   
   /* Visual Effects */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Increased shadow for better visibility */
 }
 
 .header-container {
   /* Layout */
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* Space content evenly */
-  align-items: center; /* Vertical alignment */
+  justify-content: space-between; 
+  align-items: center; 
   
   /* Spacing */
-  padding: 1rem 2rem;
+  margin: 0 auto;
+  padding: 0.75rem 2rem; /* Reduced vertical padding for compact look */
 }
 
+/* ===== Logo Section Styling ===== */
 .logo {
   /* Layout */
   display: flex;
   align-items: center;
   
   /* Spacing */
-  gap: 1rem;
+  gap: 0.75rem; /* Reduced gap between icon and text */
   
-  /* Link reset (applies to the <a> tag) */
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color from header */
+  /* Link Reset */
+  text-decoration: none; 
+  color: inherit; 
 }
 
 .logo-icon {
   /* Sizing & Model */
-  width: 80px;
-  height: 80px;
+  width: 50px; 
+  height: 50px;
   display: block;
   
-  /* Animation Setup */
+  /* Visuals & Effects */
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   transform-origin: center;
 }
 
@@ -63,17 +66,32 @@ header {
   to { transform: rotate(360deg); }
 }
 
-.logo-text h1 {
-  /* Typography */
-  font-size: 1.25rem;
-  font-weight: 600;
+.logo-text {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center text relative to the icon */
 }
 
-.logo-text p {
-  /* Typography & Visual */
-  font-size: 0.75rem;
-  opacity: 0.9;
+.logo-text h1.logo-title {
+  /* Typography */
+  font-size: 1.15rem; 
+  font-weight: 700; 
+  
+  /* Spacing Reset */
+  margin: 0; 
 }
+
+.logo-text p.logo-subtitle {
+  /* Typography & Visual */
+  font-size: 0.7rem; 
+  opacity: 0.8; 
+  line-height: 1.2;
+  
+  /* Spacing Reset */
+  margin: 0; 
+}
+
 
 /* ===== Main Navigation ===== */
 nav {
@@ -82,37 +100,39 @@ nav {
   align-items: center;
   
   /* Spacing */
-  gap: 2rem;
+  gap: 1.75rem; 
 }
 
-/* Navigation Links (replacing old button styles) */
+/* Navigation Links Styling */
 nav .nav-link {
   /* Reset appearance */
   background: none;
   border: none;
-  text-decoration: none; /* Removes the underline/blue color */
+  text-decoration: none; 
+  cursor: pointer;
   
   /* Colors */
   color: var(--secondary-color);
   
   /* Typography & Spacing */
-  cursor: pointer;
-  padding: 0.5rem 0;
   font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0; 
   
-  /* Effects */
-  transition: all 0.3s;
-  border-bottom: 2px solid transparent;
+  /* Effects & Active State Setup */
+  transition: all 0.3s ease-in-out;
+  border-bottom: 3px solid transparent; 
 }
 
 nav .nav-link:hover,
 nav .nav-link.active {
   /* Active/Hover Visuals */
-  border-bottom-color: var(--secondary-color);
-  color: var(--secondary-color); /* Ensures color is maintained on hover/active */
+  border-bottom-color: var(--primary-dark); /* Accent color on hover/active */
+  color: var(--primary-dark); 
 }
 
 
+/* ===== Auth/Button Section ===== */
 .auth-section {
   /* Layout */
   display: flex;
@@ -127,6 +147,8 @@ nav .nav-link.active {
   font-size: 0.9rem;
 }
 
+
+/* ===== Mobile Menu Button ===== */
 .mobile-menu-btn {
   /* Default state (Hidden on desktop) */
   display: none;
@@ -138,7 +160,8 @@ nav .nav-link.active {
   
   /* Colors & Typography */
   color: var(--secondary-color);
-  font-size: 1.5rem;
+  font-size: 1.75rem; 
+  padding: 0.2rem;
 }
 
 /*
@@ -149,37 +172,67 @@ nav .nav-link.active {
 
 @media (max-width: 768px) {
   .header-container {
-    padding: 1rem; /* Adjust padding for mobile */
-    flex-wrap: wrap; /* Allows items to stack */
+    /* Layout */
+    flex-wrap: wrap; 
+    
+    /* Spacing */
+    padding: 0.5rem 1rem; 
   }
 
+  /* Default Mobile Nav State (Toggled by JS) */
   nav {
-    /* Default Mobile State */
+    /* Default State */
     display: none;
     
     /* Layout */
     width: 100%;
     flex-direction: column;
     
-    /* Spacing */
+    /* Spacing & Separator */
     gap: 0.5rem;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.5rem; 
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Separator line */
   }
 
   nav.active {
     display: flex; /* Menu visible when 'active' class is added by JS */
   }
-
-  .mobile-menu-btn {
-    display: block; /* Show menu button on mobile */
+  
+  /* Navigation Links in Mobile View */
+  nav .nav-link {
+    /* Layout & Alignment */
+    width: 100%; 
+    text-align: center;
+    
+    /* Spacing & Reset */
+    padding: 0.5rem 0;
+    border-bottom: none; 
+    background-color: transparent; 
+  }
+  
+  nav .nav-link:hover,
+  nav .nav-link.active {
+    /* Hover/Active Visuals */
+    border-bottom: none;
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle background accent */
+    color: var(--secondary-color); 
   }
 
+  .mobile-menu-btn {
+    display: block; 
+    order: 2; /* Set order in the flex container */
+    align-self: center;
+  }
+
+  /* Adjustments for top-row alignment (Logo and Menu Button) */
+  .logo {
+    width: 65%; 
+    order: 1;
+  }
+  
+  /* Auth section is hidden on the smallest screens, use visibility if needed later */
   .auth-section {
-    /* Mobile Layout */
-    width: 100%;
-    justify-content: space-between;
-    
-    /* Spacing */
-    margin-top: 1rem;
+    display: none; 
   }
 }

@@ -10,8 +10,11 @@ footer {
   background-color: var(--secondary-color);
   color: var(--white);
   
-  /* Spacing */
-  margin-top: 4rem; /* Top margin to separate from main content */
+  /* Positioning & Spacing */
+  margin-top: 4rem; 
+  
+  /* Visual: Subtle separation from the main content */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15); 
 }
 
 .footer-container {
@@ -26,7 +29,6 @@ footer {
 .footer-grid {
   /* Layout - Responsive Grid */
   display: grid;
-  /* Creates columns that fit automatically, minimum 200px wide */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   
   /* Spacing */
@@ -34,44 +36,77 @@ footer {
   margin-bottom: 2rem;
 }
 
+/* --- SECTION HEADINGS --- */
 .footer-section h4 {
   /* Typography & Colors */
-  color: var(--white);
+  color: var(--primary-color); /* Brand color for headings */
+  font-weight: 700; 
+  text-transform: uppercase; 
   
-  /* Spacing */
-  margin-bottom: 1rem;
+  /* Spacing & Visual Separator */
+  margin-bottom: 1.25rem; 
+  padding-bottom: 0.5rem; 
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Subtle line */
 }
 
-.footer-section ul {
+/* --- TEXT CONTENT (Info Section) --- */
+.footer-subtitle, 
+.footer-date-loc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+/* --- LISTS & LINKS --- */
+.footer-list {
   /* List Reset */
   list-style: none;
   margin-left: 0; 
+  padding-left: 0;
 }
 
 .footer-section li {
   /* Typography & Spacing */
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem; 
   
   /* Visual */
-  opacity: 0.8;
+  opacity: 0.85; 
+  
+  /* Alignment for custom bullet point */
+  position: relative;
+  padding-left: 1rem;
 }
 
-/* Link Styles (to remove default browser styling) */
+/* Custom bullet point for list items */
+.footer-section li:before {
+    content: "•"; 
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Link Styles (A-tags inside list items) */
 .footer-section a {
   /* Typography & Color */
-  color: inherit; /* Inherits the white color from the parent footer */
-  text-decoration: none; /* Removes the underline/default blue color */
+  color: inherit; 
+  text-decoration: none; /* Removes underline/default blue color */
   
   /* Effects */
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, padding-left 0.2s; 
 }
 
 .footer-section a:hover {
-  /* Effects */
-  opacity: 1; /* Slight hover effect for better visibility */
+  /* Hover effects */
+  opacity: 1; 
+  padding-left: 2px; /* Subtle movement */
+  text-decoration: underline; 
 }
 
+/* --- BOTTOM COPYRIGHT SECTION --- */
 .footer-bottom {
   /* Layout & Alignment */
   text-align: center;
@@ -81,8 +116,8 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   
   /* Typography & Visual */
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-size: 0.85rem; 
+  opacity: 0.7; 
 }
 
 /*
@@ -93,6 +128,6 @@ footer {
 
 @media (max-width: 768px) {
   .footer-container {
-    padding: 2.5rem 1rem; /* Adjust padding for smaller screens */
+    padding: 2.5rem 1rem;
   }
 }

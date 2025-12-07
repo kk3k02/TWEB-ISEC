@@ -321,3 +321,110 @@ function updateActiveNavLinks() {
         }
     });
 }
+// js/script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // avoid adding multiple times
+    if (document.getElementById('muteBtn')) return;
+
+    // Create button
+    const btn = document.createElement('button');
+    btn.id = 'muteBtn';
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Mute background music');
+    btn.title = 'Mute music';
+    btn.innerHTML = speakerIcon(false);
+
+    // Styles (sticky bottom-left, margin 8px, round, padding tuned for display)
+    const css = `
+    #muteBtn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      z-index: 9999;
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(17,17,17,0.9);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.08s ease;
+      backdrop-filter: blur(6px);
+    }
+    #muteBtn:active { transform: scale(0.98); }
+    #muteBtn:focus { outline: 2px solid rgba(255,255,255,0.9); outline-offset: 2px; }
+    #muteBtn svg { width: 24px; height: 24px; display: block; }
+    #muteBtn.muted { background: rgba(68,68,68,0.95); }
+    @media (max-width: 420px) {
+      #muteBtn { width: 44px; height: 44px; padding: 4px; }
+      #muteBtn svg { width: 20px; height: 20px; }
+    }
+  `;
+    const styleEl = document.createElement('style');
+    styleEl.appendChild(document.createTextNode(css));
+    document.head.appendChild(styleEl);
+
+    document.body.appendChild(btn);
+
+    // Find audio: prefer audio#bgm, fallback to first audio element
+    const audio = document.querySelector('audio#bgm') || document.querySelector('audio');
+
+    // Initialize state based on audio (if present)
+    const setState = (muted) => {
+        btn.classList.toggle('muted', muted);
+        btn.innerHTML = speakerIcon(muted);
+        btn.setAttribute('aria-pressed', String(muted));
+        btn.title = muted ? 'Unmute music' : 'Mute music';
+        btn.setAttribute('aria-label', muted ? 'Unmute background music' : 'Mute background music');
+    };
+
+    if (audio) {
+        setState(!!audio.muted);
+    } else {
+        // If no audio present, keep unmuted icon but do not throw errors on click
+        setState(false);
+    }
+
+    // Toggle handler
+    const toggleMute = () => {
+        if (!audio) return;
+        audio.muted = !audio.muted;
+        setState(audio.muted);
+    };
+
+    btn.addEventListener('click', toggleMute);
+
+    // keyboard support (Enter / Space)
+    btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+        }
+    });
+
+    // SVG icons
+    function speakerIcon(muted) {
+        if (muted) {
+            // muted: speaker + slash
+            return `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="16" y2="16"></line>
+          <line x1="16" y1="9" x2="23" y2="16"></line>
+        </svg>`;
+        }
+        // unmuted: speaker + waves
+        return `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 5.93a9 9 0 0 1 0 12.73"></path>
+      </svg>`;
+    }
+});

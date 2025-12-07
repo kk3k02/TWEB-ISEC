@@ -1,47 +1,47 @@
 /* ===== Reset + base ===== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  --primary-color: #FFE100;
-  --primary-dark: #000000;
-  --primary-light: #FFF8B0;
-  --text-primary: #D97706;
+    --primary-color: #FFE100;
+    --primary-dark: #000000;
+    --primary-light: #FFF8B0;
+    --text-primary: #D97706;
 
-  --secondary-color: #000000;
-  --text-color: #000000;
-  --text-light: rgba(0, 0, 0, 0.65);
+    --secondary-color: #000000;
+    --text-color: #000000;
+    --text-light: rgba(0, 0, 0, 0.65);
 
-  --bg-color: #FFFFFF;
-  --white: #FFFFFF;
+    --bg-color: #FFFFFF;
+    --white: #FFFFFF;
 
-  --border-color: rgba(0, 0, 0, 0.12);
+    --border-color: rgba(0, 0, 0, 0.12);
 
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --danger-color: #ef4444;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--bg-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
 }
 
 /* ===== Utilities ===== */
@@ -60,163 +60,164 @@ h3 {
 
 /* ===== Buttons (używane w headerze + formularzu) ===== */
 .btn {
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.3s;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
-  color: var(--white);
+    background-color: var(--primary-dark);
+    color: var(--white);
 }
 
 /* ===== Main / Sections ===== */
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: calc(100vh - 200px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
 }
 
 .section { display: none; }
 
 .section.active {
-  display: block;
-  animation: fadeIn 0.3s ease-in;
+    display: block;
+    animation: fadeIn 0.3s ease-in;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Cards ===== */
 .card {
-  background: #FFFDD0;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
+    background: #FFFDD0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 /* ===== Grid ===== */
 .grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 /* ===== Table-like blocks (Important Dates) ===== */
 .card--important-dates{
-  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+
 }
 
 .dates-list{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .dates-row{
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  background: var(--white);
-  border-radius: 0.375rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 0.375rem;
 }
 
 .dates-value{
-  color: var(--danger-color);
-  font-weight: 700;
+    color: var(--danger-color);
+    font-weight: 700;
 }
 
 /* ===== Templates block ===== */
 .templates-block{
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-  padding: 2rem;
-  border-radius: 0.5rem;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    padding: 2rem;
+    border-radius: 0.5rem;
 }
 
 .template-card{
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .template-emoji{
-  font-size: 2rem;
-  margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 /* ===== Forms ===== */
 .form-group {
-  margin-bottom: 1.5rem;
-  width: 100%;
+    margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  text-align: left;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: left;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.375rem;
-  font-size: 1rem;
-  transition: all 0.3s;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: all 0.3s;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 225, 0, 0.35);
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 225, 0, 0.35);
 }
 
 /* ===== Toast ===== */
 .toast {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  background: var(--white);
-  padding: 1rem 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  display: none;
-  z-index: 2000;
-  animation: slideIn 0.3s ease-out;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    display: none;
+    z-index: 2000;
+    animation: slideIn 0.3s ease-out;
 }
 
 .toast.show { display: block; }
@@ -224,23 +225,47 @@ main {
 .toast.error { border-left: 4px solid var(--danger-color); }
 
 @keyframes slideIn {
-  from { transform: translateX(400px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+    from { transform: translateX(400px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }
 
 /* ===== Responsive (page only) ===== */
 @media (max-width: 768px) {
-  main { padding: 1rem; }
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    main { padding: 1rem; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
 
-  .dates-row{
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .dates-row{
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .toast {
-    left: 1rem;
-    right: 1rem;
-    top: 1rem;
-  }
+    .toast {
+        left: 1rem;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+/* Pozwól formularzowi mieć pełną szerokość */
+.card form {
+    padding: 24px;
+    margin: 0 auto;        /* wyśrodkowanie */
+    width: 80%;
+    max-width: 1000px;
+}
+
+/* Nadpisujemy flex centrowanie tylko dla kart z formularzem */
+.card:has(form) {
+    padding: 24px;
+    align-items: stretch;
+    text-align: center; /* reset text align to center */
+}
+@media (max-width: 768px) {
+    .card form {
+        padding: 8px;     /* mniejszy padding dla formularza */
+        width: 90%;       /* opcjonalnie — lekko większa szerokość na mobile */
+    }
+
+    .card:has(form) {
+        padding: 8px;     /* mniejszy padding dla kontenera karty */
+    }
 }

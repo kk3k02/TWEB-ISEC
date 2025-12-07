@@ -67,11 +67,12 @@ header {
 }
 
 .logo-text {
-  /* Layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertically center text relative to the icon */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
 }
+
 
 .logo-text h1.logo-title {
   /* Typography */
@@ -170,7 +171,7 @@ nav .nav-link.active {
 |--------------------------------------------------------------------------
 */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .header-container {
     /* Layout */
     flex-wrap: wrap; 
@@ -235,4 +236,19 @@ nav .nav-link.active {
   .auth-section {
     display: none; 
   }
+}
+@media (max-width: 768px) {
+
+    .logo {
+        width: 70%;
+    }
+
+    .logo-text h1.logo-title {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .logo-text p.logo-subtitle {
+        font-size: 0.6rem;
+    }
 }

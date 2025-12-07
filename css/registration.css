@@ -304,3 +304,10 @@ table tbody tr:nth-child(even) {
     top: 1rem;
   }
 }
+
+
+#tourismSlideshow .slide-content h3,
+#tourismSlideshow .slide-content p {
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6); /* lepsza czytelność */
+}
